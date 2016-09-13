@@ -1,0 +1,15 @@
+[user]
+	email = khoinvbg@gmail.com
+	name = Nguyen Van Khoi
+[push]
+	default = current
+[color]
+	ui = always
+[core]
+	excludesfile = ~/.gitignore
+	pager = nkf -w | LESSCHARSET=utf-8 less
+	quotepath = false
+	editor = vim
+[alias]
+	tree = log --oneline --decorate --all --graph
+	merge-log = "!f() { git log --stat \"$1^..$1\"; }; f"
