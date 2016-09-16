@@ -1,4 +1,9 @@
-snippet title "Titelize in the Transformation"
-${1:a text}
-${1/\w+\s*/\u$0/g}
+snippet map
+map(function(${1:x}){return $1})
+$0
+endsnippet
+
+snippet map3
+map(function(${1:x}, ${2:i}, ${3:arr}){return $1})
+$0
 endsnippet
