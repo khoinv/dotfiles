@@ -1,4 +1,17 @@
 #!/bin/bash
+cd $HOME
+#create backup current dotfiles config
+backup=.dotfiles_old.$(date +"%Y%m%d_%H%M%S")
+mkdir $backup
+echo $backup
+mv .bash_profile $backup
+mv .bashrc $backup
+mv .gitconfig $backup
+mv .gitignore $backup
+mv .tmux.conf $backup
+mv .vim $backup
+mv .vimrc $backup
+#copy new config to your home directory using symboy link
 ln -s .dotfiles/.bash_profile ~/.bash_profile
 ln -s .dotfiles/.bashrc ~/.bashrc
 ln -s .dotfiles/.gitconfig ~/.gitconfig
