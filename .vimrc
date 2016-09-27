@@ -29,13 +29,18 @@ Plugin 'https://github.com/myusuf3/numbers.vim.git'
 Plugin 'https://github.com/tpope/vim-commentary.git'
 Plugin 'https://github.com/tpope/vim-fugitive.git'
 Plugin 'https://github.com/altercation/vim-colors-solarized'
-Plugin 'klen/python-mode'
+" Plugin 'klen/python-mode'
 
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
+
+Plugin 'morhetz/gruvbox'
+
+Plugin 'scrooloose/syntastic'
+Plugin 'yggdroot/indentline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -65,9 +70,11 @@ vnoremap <silent> <C-f> :FufBufferTagAllWithSelectedText!<CR>
 nnoremap <silent><C-p> :FufCoverageFile<CR>
 
 set t_Co=256
-set background=dark                                                                                                                                                            
-let g:solarized_termcolors=256                                                                                                                                                 
-colorscheme solarized                                                                                                                                                          
+set background=dark
+let g:solarized_termcolors=256
+" colorscheme solarized
+colorscheme gruvbox
+
 let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree'] 
 " set clipboard=unnamed
 
@@ -78,8 +85,6 @@ let g:ycm_autoclose_preview_window_after_completion=1
 " map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:AutoClosePumvisible = {"ENTER": "<C-Y>", "SC": "<ESC>"}
 set hlsearch
-autocmd FileType python map <buffer> <leader>8 :PymodeLintAuto<CR>
-
 
 map <leader>w :w<CR>
 map <leader>q :q<CR>
@@ -99,3 +104,13 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['jshint', 'jslint']
+set list listchars=tab:>-,trail:.,extends:>
