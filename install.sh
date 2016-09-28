@@ -11,6 +11,7 @@ mv .gitignore $backup
 mv .tmux.conf $backup
 mv .vim $backup
 mv .vimrc $backup
+mv .bash_virtenv $backup
 #copy new config to your home directory using symboy link
 ln -s .dotfiles/.bash_profile ~/.bash_profile
 ln -s .dotfiles/.bashrc ~/.bashrc
@@ -19,3 +20,4 @@ ln -s .dotfiles/.gitignore ~/.gitignore
 ln -s .dotfiles/.tmux.conf ~/.tmux.conf
 ln -s .dotfiles/.vim/ ~/.vim
 ln -s .dotfiles/.vimrc ~/.vimrc
+ln -s .dotfiles/.bash_virtenv ~/.bash_virtenv

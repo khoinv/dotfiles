@@ -22,3 +22,4 @@ alias gc="git checkout"
 alias gpf="git_pull()"
 export PATH=/usr/local/bin:$PATH
 source /usr/local/bin/virtualenvwrapper.sh
+source ~/.bashrc

@@ -23,9 +23,7 @@ Plugin 'https://github.com/tpope/vim-surround'
 
 Plugin 'https://github.com/mattn/emmet-vim'
 
-Plugin 'vim-scripts/closetag.vim'
-Plugin 'https://github.com/tpope/vim-repeat.git'
-Plugin 'https://github.com/myusuf3/numbers.vim.git'
+Plugin 'Raimondi/delimitMate'
 Plugin 'https://github.com/tpope/vim-commentary.git'
 Plugin 'https://github.com/tpope/vim-fugitive.git'
 Plugin 'https://github.com/altercation/vim-colors-solarized'
@@ -41,6 +39,9 @@ Plugin 'morhetz/gruvbox'
 
 Plugin 'scrooloose/syntastic'
 Plugin 'yggdroot/indentline'
+Plugin 'bonsaiben/bootstrap-snippets'
+Plugin 'tomasr/molokai'
+Plugin 'vim-scripts/grep.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -61,29 +62,17 @@ set softtabstop=4
 set shiftwidth=4
 set smartindent
 set number
-set backupdir=~/vimbackup
-set directory=~/vimswap
-" nnoremap <Leader>f :execute "vimgrep /" . expand("<cword>") . "/j **/**/**/**"<Bar> cw<CR>
 
-nnoremap <silent> <C-f> :FufBufferTagAllWithCursorWord!<CR>
-vnoremap <silent> <C-f> :FufBufferTagAllWithSelectedText!<CR>
-nnoremap <silent><C-p> :FufCoverageFile<CR>
+" set backupdir=~/vimbackup
+" set directory=~/vimswap
+set nobackup
+set noswapfile
 
 set t_Co=256
 set background=dark
 let g:solarized_termcolors=256
-" colorscheme solarized
-colorscheme gruvbox
+colorscheme molokai
 
-let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree'] 
-" set clipboard=unnamed
-
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
-
-let g:ycm_autoclose_preview_window_after_completion=1
-" map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-let g:AutoClosePumvisible = {"ENTER": "<C-Y>", "SC": "<ESC>"}
 set hlsearch
 
 map <leader>w :w<CR>
@@ -92,8 +81,16 @@ map <leader>h <C-W>h
 map <leader>j <C-W>j
 map <leader>k <C-W>k
 map <leader>l <C-W>l
-map <leader>v :vs
-map <leader>s :sp
+map <leader>v :vsplit<CR>
+map <leader>s :split<CR>
+map <leader>f :Rgrep<CR>
+
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
+nnoremap <silent> <S-t> :tabnew<CR>
+
+"" Clean search (highlight)
+nnoremap <silent> <leader><space> :noh<cr>
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -114,3 +111,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['jshint', 'jslint']
 set list listchars=tab:>-,trail:.,extends:>
+let g:syntastic_python_checkers=['python', 'flake8']
+
+let g:ctrlp_map = '<leader>e'

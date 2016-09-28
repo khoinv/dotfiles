@@ -9,6 +9,6 @@ export JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 #export ANDROID_HOME=~/android/
 #export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH="$HOME/.node/bin:$PATH"
-#export TERM="screen-256color"
 alias tmux="tmux -2"
-export TERM=xterm-256color
+export TERM="screen-256color"
+source .bash_virtenv
