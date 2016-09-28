@@ -44,3 +44,11 @@ endsnippet
 snippet conset "conditions" b
 $${1:var} = (!empty($${2:conditions})) ? $$2 : ${3:null};
 endsnippet
+
+snippet pset "conditions" b
+$${1:var} = (!empty($_POST['${2:name}'])) ? $_POST['$2'] : ${3:null};
+endsnippet
+
+snippet gset "conditions" b
+$${1:var} = (!empty($_GET['${2:name}'])) ? $_GET['$2'] : ${3:null};
+endsnippet
