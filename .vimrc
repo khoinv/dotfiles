@@ -49,6 +49,8 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'justinj/vim-react-snippets'
 Plugin 'alvan/vim-php-manual'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'ervandew/supertab'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -59,6 +61,7 @@ nnoremap <C-b> :NERDTreeFind<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 set encoding=utf-8
+set fileencodings=utf-8,sjis,default
 if !has('gui_running') && &encoding != 'cp932' && &term == 'win32'
 	set termencoding=cp932
 endif
@@ -196,3 +199,20 @@ let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
 set backspace=indent,eol,start
 set foldmethod=indent
+set foldlevel=0
+set cursorline
+
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
