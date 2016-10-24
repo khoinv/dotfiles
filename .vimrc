@@ -100,6 +100,7 @@ nnoremap <leader>; <S-a>;
 nnoremap <leader>b <C-u>
 nnoremap <leader>n <C-d>
 nnoremap <space> za
+nnoremap ; :
 
 inoremap <leader>w <ESC>:w<CR>
 inoremap <leader>q <ESC>:q<CR>
@@ -121,6 +122,9 @@ inoremap <leader>o <C-x><C-o>
 inoremap <leader>p <C-x><C-p>
 inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
 inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
+
+au BufRead,BufNewFile *.php inoremap . ->
+au BufRead,BufNewFile *.php inoremap .. .
 
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
