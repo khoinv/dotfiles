@@ -13,3 +13,4 @@ alias tmux="tmux -2"
 alias vi="vim"
 export TERM="screen-256color"
 source ~/.bash_virtenv
+export PATH=/usr/bin:$PATH

@@ -51,6 +51,7 @@ Plugin 'justinj/vim-react-snippets'
 Plugin 'alvan/vim-php-manual'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'ervandew/supertab'
+Plugin 'soramugi/auto-ctags.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -208,6 +209,7 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#sources#tags#cache_limit_size = 500000
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
@@ -216,3 +218,7 @@ endif
 
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+set tags+=.git/tags
+let g:auto_ctags_directory_list = ['.git', '.svn']
+let g:auto_ctags = 1
+let g:auto_ctags_tags_args = '--tag-relative --recurse --sort=yes'

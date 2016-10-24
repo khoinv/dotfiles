@@ -13,3 +13,5 @@
 [alias]
 	tree = log --oneline --decorate --all --graph
 	merge-log = "!f() { git log --stat \"$1^..$1\"; }; f"
+[init]
+	templatedir = ~/.git_tmp
