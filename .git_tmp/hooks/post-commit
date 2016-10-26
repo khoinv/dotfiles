@@ -1,1 +1,0 @@
-ctags --tag-relative --recurse --sort=yes  --append=no -f .git/tags
