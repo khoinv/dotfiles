@@ -87,7 +87,7 @@ nnoremap <leader>f :Rgrep<CR>
 nnoremap <leader>a <S-a>
 nnoremap <leader>; <S-a>;
 nnoremap <space> za
-nnoremap CR G
+nnoremap <CR> G
 nnoremap ; :
 
 inoremap {<CR> <Esc><S-a>{<CR>}<ESC><S-o>

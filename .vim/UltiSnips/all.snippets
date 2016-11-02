@@ -1,0 +1,26 @@
+global !p
+def fraction(a,b):
+    try:
+        return "%.1 f" % (float (a)/float(b))
+    except (ValueError, ZeroDivisionError):
+        return "ERR"
+endglobal
+
+snippet decorator "Decorator"
+@${1:name}:
+    ${VISUAL:func}
+$0
+endsnippet
+
+snippet 75wrds "Log a 750words.com session" b
+750words.com: ${1:750} words in ${2:20} minutes - `!p
+snip.rv = fraction(t[1], t[2])
+` wpm.
+endsnippet
+
+snippet up "Unique Pointer" i
+std::unique_ptr<${1:`!p
+snip.rv = snip.v.text.strip("*") or "klass"
+`}>
+endsnippet
+
