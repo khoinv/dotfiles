@@ -13,5 +13,10 @@
 [alias]
 	tree = log --oneline --decorate --all --graph
 	merge-log = "!f() { git log --stat \"$1^..$1\"; }; f"
+	d = difftool
 [init]
 	templatedir = ~/.git_template
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false

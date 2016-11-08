@@ -89,6 +89,9 @@ nnoremap <leader>; <S-a>;
 nnoremap <space> za
 nnoremap <CR> G
 nnoremap ; :
+nnoremap <leader>nt :NeoCompleteToggle<CR>
+nnoremap <leader>st :SyntasticToggleMode<CR>
+cnoremap W! w !sudo tee %
 
 inoremap {<CR> <Esc><S-a>{<CR>}<ESC><S-o>
 inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
@@ -121,10 +124,13 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 0
+" let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <leader>w :SyntasticCheck<CR>
+
 let g:syntastic_javascript_checkers = ['jshint', 'jslint']
 set list listchars=tab:>-,trail:.,extends:>
 let g:syntastic_python_checkers=['python', 'pylint']
