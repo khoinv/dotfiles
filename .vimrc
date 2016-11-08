@@ -97,8 +97,6 @@ inoremap {<CR> <Esc><S-a>{<CR>}<ESC><S-o>
 inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
 inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 
-au BufRead,BufNewFile *.php inoremap -. ->
-
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
