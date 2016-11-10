@@ -27,6 +27,7 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'ervandew/supertab'
 Plugin 'soramugi/auto-ctags.vim'
 Plugin 'vim-scripts/matchit.zip'
+Plugin 'vim-repeat'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
