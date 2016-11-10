@@ -103,12 +103,13 @@ let g:UltiSnipsEditSplit="vertical"
 
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-
-let g:syntastic_javascript_checkers = ['jshint', 'jslint']
-let g:syntastic_python_checkers=['python', 'pylint']
-let g:syntastic_html_checkers=['jshint', 'jslint']
 let g:syntastic_aggregate_errors = 1
 let g:ctrlp_map = '<leader>e'
+
+autocmd FileType javascript let g:syntastic_javascript_checkers = ['jshint', 'jslint']
+autocmd FileType python let g:syntastic_python_checkers=['python', 'pylint']
+autocmd FileType html let g:syntastic_html_checkers=['jshint', 'jslint']
+
 autocmd FileType html :UltiSnipsAddFiletypes javscript|:UltiSnipsAddFiletypes php|:UltiSnipsAddFiletypes python
 autocmd FileType javascript :UltiSnipsAddFiletypes html
 autocmd FileType python :UltiSnipsAddFiletypes html
