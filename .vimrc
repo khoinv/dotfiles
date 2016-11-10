@@ -82,6 +82,10 @@ inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
+autocmd FileType qf nnoremap <buffer> t <C-W><Enter><C-W>T
+autocmd FileType qf nnoremap <buffer> v <C-W><Enter><C-W>L
+autocmd FileType qf nnoremap <buffer> s <C-W><Enter>
+
 let Grep_Default_Options = '-IR'
 let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules'
