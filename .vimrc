@@ -53,7 +53,7 @@ nnoremap <leader>j <C-W>j
 nnoremap <leader>k <C-W>k
 nnoremap <leader>l <C-W>l
 nnoremap <leader>v :vsplit<CR>
-nnoremap <leader>s :split<CR>
+nnoremap <leader>h :split<CR>
 nnoremap <leader>f :Rgrep<CR>
 nnoremap <leader>a <S-a>
 nnoremap <leader>; <S-a>;
@@ -67,6 +67,10 @@ inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+autocmd FileType qf nnoremap <buffer> t <C-W><Enter><C-W>T
+autocmd FileType qf nnoremap <buffer> v <C-W><Enter><C-W>L
+autocmd FileType qf nnoremap <buffer> h <C-W><Enter>
 
 let Grep_Default_Options = '-IR'
 let Grep_Skip_Files = '*.log *.db'
