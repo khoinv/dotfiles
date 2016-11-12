@@ -53,6 +53,7 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme molokai
 set hlsearch
+set shell=bash\ --login
 
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
@@ -91,10 +92,23 @@ let Grep_Default_Options = '-IR'
 let Grep_Skip_Files = '*.log *.db'
 let Grep_Skip_Dirs = '.git node_modules'
 
+function! GetSelectedText()
+    normal gv"xy
+    let result = getreg("x")
+    normal gv
+    return result
+endfunction
+
+nnoremap <leader>p :setlocal paste! paste?<CR>
+nnoremap <leader>o :execute '!open_web localhost' expand('%')<CR>
+nnoremap <leader>g :execute '!gg' GetSelectedText()<CR>
+
+
+
 nnoremap <silent> <S-t> :tabnew<CR>
 nnoremap <silent> <leader>z :sus<CR>
 
-nnoremap <silent> <leader><space> :noh<cr>
+nnoremap <silent> <leader><space> :noh<CR>
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -134,3 +148,9 @@ set tags+=.git/tags
 let g:auto_ctags_directory_list = ['.git', '.svn']
 let g:auto_ctags = 1
 let g:auto_ctags_tags_args = '--tag-relative --recurse --sort=yes'
+
+autocmd FileType python nnoremap <leader>r :execute '!clear;python' expand('%')<CR>
+autocmd FileType php nnoremap <c-f> :execute "vimgrep /function " . expand("<cword>") . "/j **/*.php" <Bar> cw<CR>
+" autocmd BufWritePost * !run_tests.sh <afile>
+" set makeprg=pylint\ --reports=n\ --output-format=parseable\ %:p
+" set errorformat=%f:%l:\ %m

@@ -7,7 +7,7 @@ parse_git_branch() {
 }
 
 #export PS1="\u@\h \[\033[32m\]\w - \$(parse_git_branch)\[\033[00m\] $ "
-export PS1="\u@\h \[\033[32m\]\w - \$(parse_git_branch)\[\033[00m\] \n$ "
+export PS1="\u@\h \[\033[32m\]\w - \$(parse_git_branch)\[\033[00m\] \n➜ "
 
 
 export PATH=/Applications/MAMP/bin/php/php5.5.26/bin:$PATH
@@ -23,3 +23,20 @@ alias gpf="git_pull()"
 export PATH=/usr/local/bin:$PATH
 source /usr/local/bin/virtualenvwrapper.sh
 source ~/.bashrc
+
+open_web(){
+    python ~/scripts/python/open_web.py $@
+}
+
+gg(){
+    open_web google.com $@
+}
+
+reloadrc(){
+    source ~/.bashrc
+    source ~/.bash_profile
+}
+
+superkill(){
+    ps -ef | grep $1| grep -v grep| awk '{print $2}'| xargs kill -9
+}
