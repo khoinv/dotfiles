@@ -32,6 +32,10 @@ gg(){
     open_web google.com $@
 }
 
+stackoverflow(){
+    open_web google.com stackoverflow $@
+}
+
 reloadrc(){
     source ~/.bashrc
     source ~/.bash_profile
@@ -40,3 +44,7 @@ reloadrc(){
 superkill(){
     ps -ef | grep $1| grep -v grep| awk '{print $2}'| xargs kill -9
 }
+
+alias cdd='cd ~/Desktop/'
+alias cdh='cd ~'
+alias cds='cd ~/server'
