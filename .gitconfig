@@ -1,22 +1,31 @@
 [user]
-	email = khoinvbg@gmail.com
-	name = Nguyen Van Khoi
+    email = khoinvbg@gmail.com
+    name = Nguyen Van Khoi
 [push]
-	default = current
+    default = current
 [color]
-	ui = always
+    ui = always
 [core]
-	excludesfile = ~/.gitignore
-	pager = nkf -w | LESSCHARSET=utf-8 less
-	quotepath = false
-	editor = vim
+    excludesfile = ~/.gitignore
+    pager = nkf -w | LESSCHARSET=utf-8 less
+    quotepath = false
+    editor = vim
 [alias]
-	tree = log --oneline --decorate --all --graph
-	merge-log = "!f() { git log --stat \"$1^..$1\"; }; f"
-	d = difftool
+    tree = log --oneline --decorate --all --graph
+    merge-log = "!f() { git log --stat \"$1^..$1\"; }; f"
+    d = difftool
+    c = checkout
+    l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    s = status
+    p = pull
+    m = merge
+    lp = log -p
+    lt = log --stat
+
+
 [init]
-	templatedir = ~/.git_template
+    templatedir = ~/.git_template
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 [difftool]
-	prompt = false
+    prompt = false

@@ -14,6 +14,8 @@ mv .vimrc $backup
 mv .bash_virtenv $backup
 mv .git_template $backup
 mv .scripts $backup
+mv .inputrc $backup
+mv .aliases $backup
 #copy new config to your home directory using symboy link
 ln -s .dotfiles/.bash_profile ~/.bash_profile
 ln -s .dotfiles/.bashrc ~/.bashrc
@@ -25,3 +27,5 @@ ln -s .dotfiles/.vimrc ~/.vimrc
 ln -s .dotfiles/.bash_virtenv ~/.bash_virtenv
 ln -s .dotfiles/.git_template ~/.git_template
 ln -s .dotfiles/.scripts/ ~/.scripts
+ln -s .dotfiles/.inputrc ~/.inputrc
+ln -s .dotfiles/.aliases ~/.aliases
