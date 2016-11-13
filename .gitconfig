@@ -18,6 +18,7 @@
     s = status
     p = pull
     m = merge
+    a = 'add'
     l = log
     lp = log -p
     lt = log --stat
