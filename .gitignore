@@ -1,3 +1,5 @@
 sftp-config.json
 .DS_Store
 .vim/bundle/
+shukiin.py
+*.pyc
