@@ -15,10 +15,10 @@
     merge-log = "!f() { git log --stat \"$1^..$1\"; }; f"
     d = difftool
     c = checkout
-    l = log --pretty=oneline -n 20 --graph --abbrev-commit
     s = status
     p = pull
     m = merge
+    l = log
     lp = log -p
     lt = log --stat
 
