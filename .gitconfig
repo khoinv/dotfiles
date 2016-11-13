@@ -13,15 +13,18 @@
 [alias]
     tree = log --oneline --decorate --all --graph
     merge-log = "!f() { git log --stat \"$1^..$1\"; }; f"
-    d = difftool
-    c = checkout
+    dt = difftool
+    d = diff
+    c = commit
+    ch = checkout
     s = status
     p = pull
     m = merge
-    a = 'add'
+    a = add
     l = log
     lp = log -p
     lt = log --stat
+    r = rebase
 
 
 [init]
