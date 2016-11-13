@@ -2,5 +2,5 @@
 source ~/.bash_profile
 Date >> /tmp/MyLaunchdTest.out
 workon selenium
-python checkin.py
+python ~/scripts/python/checkin.py
 
