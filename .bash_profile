@@ -30,7 +30,7 @@ gg(){
 }
 
 stackoverflow(){
-    open_web google.com stackoverflow $@
+    open_web google.com site:stackoverflow.com $@
 }
 
 reloadrc(){
