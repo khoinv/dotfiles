@@ -162,7 +162,7 @@ alias path='echo -e ${PATH//:/\\n}'
 alias vibash='vim ~/.bash_profile'
 
 alias vi='vim'
-alias cw="open kcw.kddi.ne.jp"
-alias fb='open facebook.com'
+alias cw="open https://kcw.kddi.ne.jp"
+alias fb='open https://facebook.com'
 alias checkin='sh ~/scripts/bash/checkin.sh'
 alias checkout='checkin'
