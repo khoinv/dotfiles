@@ -40,3 +40,7 @@ reloadrc(){
 superkill(){
     ps -ef | grep $1| grep -v grep| awk '{print $2}'| xargs kill -9
 }
+
+members(){
+    awk -v x=$1 -F':' '$1 == x {print $4}' /etc/group
+}
