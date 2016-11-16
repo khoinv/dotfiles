@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/nguyenvankhoi/server/laravel/site1'
 let g:netrw_dirhist_2='/Users/nguyenvankhoi/server/rsr/ApnsPHP'
 let g:netrw_dirhist_3='/Users/nguyenvankhoi/server/rsr/ApnsPHP/ApnsPHP'
+let g:netrw_dirhist_4='/Users/nguyenvankhoi/.plugman'
