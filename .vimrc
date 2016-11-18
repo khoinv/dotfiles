@@ -53,7 +53,7 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme molokai
 set hlsearch
-set shell=bash\ --login
+" set shell=bash\ --login
 
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
@@ -100,8 +100,8 @@ function! GetSelectedText()
 endfunction
 
 nnoremap <leader>p :setlocal paste! paste?<CR>
-nnoremap <leader>o :execute '!open_web localhost' expand('%')<CR>
-nnoremap <leader>g :execute '!gg' GetSelectedText()<CR>
+nnoremap <leader>o :execute '!python ~/scripts/python/open_web.py localhost' expand('%')<CR>
+nnoremap <leader>g :execute '!python ~/scripts/python/open_web.py google.com' GetSelectedText()<CR>
 
 
 
