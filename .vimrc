@@ -28,6 +28,7 @@ Plugin 'ervandew/supertab'
 Plugin 'soramugi/auto-ctags.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'tpope/vim-repeat'
+Plugin 'derekwyatt/vim-scala'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
