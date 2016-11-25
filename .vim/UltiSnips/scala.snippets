@@ -1,6 +1,16 @@
-#raw string
+# raw string
 snippet rstring
 """
 |${0}
 """.stripMargin
+endsnippet
+
+# require
+snippet req
+require(${0})
+endsnippet
+
+# implicit
+snippet impdef
+implicit def ${1:cls1}to${2:cls2}(x: $1) = new $2(x)
 endsnippet
