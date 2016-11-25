@@ -156,3 +156,4 @@ autocmd FileType php nnoremap <c-f> :execute "vimgrep /function " . expand("<cwo
 " autocmd BufWritePost * !run_tests.sh <afile>
 " set makeprg=pylint\ --reports=n\ --output-format=parseable\ %:p
 " set errorformat=%f:%l:\ %m
+set wildignore+=**/target/**

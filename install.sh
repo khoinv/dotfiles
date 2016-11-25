@@ -18,6 +18,7 @@ mv .inputrc $backup
 mv .aliases $backup
 mv .sbtrc $backup
 mv .ctags $backup
+mv .ideavimrc $backup
 #copy new config to your home directory using symboy link
 ln -s .dotfiles/.bash_profile ~/.bash_profile
 ln -s .dotfiles/.bashrc ~/.bashrc
@@ -33,3 +34,4 @@ ln -s .dotfiles/.inputrc ~/.inputrc
 ln -s .dotfiles/.aliases ~/.aliases
 ln -s .dotfiles/.sbtrc ~/.sbtrc
 ln -s .dotfiles/.ctags ~/.ctags
+ln -s .dotfiles/.ideavimrc ~/.ideavimrc
