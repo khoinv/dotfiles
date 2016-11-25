@@ -16,6 +16,8 @@ mv .git_template $backup
 mv scripts $backup
 mv .inputrc $backup
 mv .aliases $backup
+mv .sbtrc $backup
+mv .ctags $backup
 #copy new config to your home directory using symboy link
 ln -s .dotfiles/.bash_profile ~/.bash_profile
 ln -s .dotfiles/.bashrc ~/.bashrc
@@ -29,3 +31,5 @@ ln -s .dotfiles/.git_template ~/.git_template
 ln -s .dotfiles/scripts/ ~/scripts
 ln -s .dotfiles/.inputrc ~/.inputrc
 ln -s .dotfiles/.aliases ~/.aliases
+ln -s .dotfiles/.sbtrc ~/.sbtrc
+ln -s .dotfiles/.ctags ~/.ctags

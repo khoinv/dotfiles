@@ -37,7 +37,7 @@ sleep(10)
 driver.find_element_by_css_selector('.uk-button.uk-button-large.uk-margin-right').click()
 alert = driver.switch_to_alert()
 sleep(5)
-# alert.accept()
+alert.accept()
 sleep(15)
 
 driver.close()
