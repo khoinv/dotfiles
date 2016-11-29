@@ -44,5 +44,10 @@ superkill(){
 members(){
     awk -v x=$1 -F':' '$1 == x {print $4}' /etc/group
 }
+
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
