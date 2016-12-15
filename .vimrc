@@ -80,8 +80,8 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
 inoremap {<CR> <Esc><S-a>{<CR>}<ESC><S-o>
-inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
-inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
+" inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
+" inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
@@ -124,7 +124,7 @@ let g:syntastic_aggregate_errors = 1
 let g:ctrlp_map = '<leader>e'
 
 autocmd FileType javascript let g:syntastic_javascript_checkers = ['jshint', 'jslint']
-autocmd FileType python let g:syntastic_python_checkers=['python', 'pylint']
+autocmd FileType python let g:syntastic_python_checkers=['python', 'flake8']
 autocmd FileType html let g:syntastic_html_checkers=['jshint', 'jslint']
 
 autocmd FileType html :UltiSnipsAddFiletypes javscript|:UltiSnipsAddFiletypes php|:UltiSnipsAddFiletypes python
@@ -157,4 +157,5 @@ autocmd FileType php nnoremap <c-f> :execute "vimgrep /function " . expand("<cwo
 " set makeprg=pylint\ --reports=n\ --output-format=parseable\ %:p
 " set errorformat=%f:%l:\ %m
 set wildignore+=**/target/**
-autocmd BufRead,BufNewFile *.txt set filetype=sh
+autocmd BufRead,BufNewFile *.txt set filetype=sql
+set clipboard=unnamed

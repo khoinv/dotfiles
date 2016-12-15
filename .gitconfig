@@ -14,6 +14,7 @@
     tree = log --oneline --decorate --all --graph
     merge-log = "!f() { git log --stat \"$1^..$1\"; }; f"
     dt = difftool
+    mt =mergetool
     d = diff
     c = commit
     ch = checkout
