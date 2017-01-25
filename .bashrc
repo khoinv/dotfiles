@@ -13,7 +13,6 @@ alias tmux="tmux -2"
 alias vi="vim"
 export TERM="screen-256color"
 source ~/.bash_virtenv
-export PATH=/usr/bin:$PATH
 
 export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode
 export LESS_TERMCAP_md=$(printf '\e[01;38;5;75m') # enter double-bright mode

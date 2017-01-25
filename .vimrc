@@ -6,6 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'kien/ctrlp.vim'
 Plugin 'https://github.com/tpope/vim-surround'
@@ -23,7 +24,7 @@ Plugin 'tomasr/molokai'
 Plugin 'vim-scripts/grep.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'Shougo/neocomplete.vim'
+" Plugin 'Shougo/neocomplete.vim'
 Plugin 'ervandew/supertab'
 Plugin 'soramugi/auto-ctags.vim'
 Plugin 'vim-scripts/matchit.zip'
@@ -104,48 +105,40 @@ endfunction
 nnoremap <leader>p :setlocal paste! paste?<CR>
 nnoremap <leader>o :execute '!python ~/scripts/python/open_web.py localhost' expand('%')<CR>
 nnoremap <leader>g :execute '!python ~/scripts/python/open_web.py google.com' GetSelectedText()<CR>
-
-
-
-nnoremap <silent> <S-t> :tabnew<CR>
 nnoremap <silent> <leader>z :sus<CR>
-
 nnoremap <silent> <leader><space> :noh<CR>
+let g:ctrlp_map = '<leader>e'
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-k>"
+let g:UltiSnipsJumpBackwardTrigger="<c-j>"
 let g:UltiSnipsEditSplit="vertical"
 
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+" disable auto synctastic
+" let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:syntastic_aggregate_errors = 1
-let g:ctrlp_map = '<leader>e'
 
-autocmd FileType javascript let g:syntastic_javascript_checkers = ['jshint', 'jslint']
-autocmd FileType python let g:syntastic_python_checkers=['python', 'flake8']
-autocmd FileType html let g:syntastic_html_checkers=['jshint', 'jslint']
-
-autocmd FileType html :UltiSnipsAddFiletypes javscript|:UltiSnipsAddFiletypes php|:UltiSnipsAddFiletypes python
-autocmd FileType javascript :UltiSnipsAddFiletypes html
-autocmd FileType python :UltiSnipsAddFiletypes html
-autocmd FileType php :UltiSnipsAddFiletypes html
-
-au BufRead,BufNewFile *.ts set filetype=typescript
 
 set backspace=indent,eol,start
 set list listchars=tab:>-,trail:.,extends:>
 set foldmethod=indent
-set foldlevel=0
+set foldlevel=1
 set cursorline
 
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#sources#tags#cache_limit_size = 500000
+" neocomplete setting
+" let g:neocomplete#enable_at_startup = 1
+" let g:neocomplete#enable_smart_case = 1
+" let g:neocomplete#sources#syntax#min_keyword_length = 3
+" let g:neocomplete#sources#tags#cache_limit_size = 500000
 
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+" let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+" let g:ycm_key_list_select_completion=[]
+" let g:ycm_key_list_previous_completion=[]
+
+
+" ctag config
 set tags+=.git/tags
 let g:auto_ctags_directory_list = ['.git', '.svn']
 let g:auto_ctags = 1
@@ -153,9 +146,21 @@ let g:auto_ctags_tags_args = '--tag-relative --recurse --sort=yes'
 
 autocmd FileType python nnoremap <leader>r :execute '!clear;python' expand('%')<CR>
 autocmd FileType php nnoremap <c-f> :execute "vimgrep /function " . expand("<cword>") . "/j **/*.php" <Bar> cw<CR>
-" autocmd BufWritePost * !run_tests.sh <afile>
-" set makeprg=pylint\ --reports=n\ --output-format=parseable\ %:p
-" set errorformat=%f:%l:\ %m
-set wildignore+=**/target/**
+autocmd FileType scala.html :UltiSnipsAddFiletypes scala
 autocmd BufRead,BufNewFile *.txt set filetype=sql
+
+" autocmd FileType javascript let g:syntastic_javascript_checkers = ['jshint', 'jslint']
+" autocmd FileType python let g:syntastic_python_checkers=['python', 'flake8']
+" autocmd FileType html let g:syntastic_html_checkers=['jshint', 'jslint']
+
+autocmd FileType html :UltiSnipsAddFiletypes javscript|:UltiSnipsAddFiletypes php|:UltiSnipsAddFiletypes python
+autocmd FileType javascript :UltiSnipsAddFiletypes html|:UltiSnipsAddFiletypes javascript
+autocmd FileType python :UltiSnipsAddFiletypes html
+autocmd FileType php :UltiSnipsAddFiletypes html
+au BufRead,BufNewFile *.ts set filetype=typescript
+
 set clipboard=unnamed
+inoremap jj <ESC>
+inoremap jk <ESC>
+set exrc
+set secure

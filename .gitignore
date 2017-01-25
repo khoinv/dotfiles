@@ -4,3 +4,4 @@ sftp-config.json
 shukiin.py
 *.pyc
 .netrwhist
+.jslintrc

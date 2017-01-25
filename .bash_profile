@@ -17,7 +17,6 @@ PATH=/usr/local/Cellar/chromedriver/2.22:$PATH
 PATH=/usr/local/bin:$PATH
 export PATH
 
-source /usr/local/bin/virtualenvwrapper.sh
 source ~/.bashrc
 source ~/.aliases
 
@@ -51,3 +50,4 @@ eval "$(anyenv init -)"
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
+export GOPATH=~/.go
