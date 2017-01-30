@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'kien/ctrlp.vim'
 Plugin 'https://github.com/tpope/vim-surround'
@@ -24,13 +24,13 @@ Plugin 'tomasr/molokai'
 Plugin 'vim-scripts/grep.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bronson/vim-trailing-whitespace'
-" Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neocomplete.vim'
 Plugin 'ervandew/supertab'
 Plugin 'soramugi/auto-ctags.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'tpope/vim-repeat'
 Plugin 'derekwyatt/vim-scala'
-Plugin 'leafgarland/typescript-vim'
+" Plugin 'leafgarland/typescript-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -80,7 +80,7 @@ nnoremap <C-b> :NERDTreeFind<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
-inoremap {<CR> <Esc><S-a>{<CR>}<ESC><S-o>
+inoremap {<CR> {<CR>}<ESC><S-O>
 " inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
 " inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 
@@ -107,15 +107,19 @@ nnoremap <leader>o :execute '!python ~/scripts/python/open_web.py localhost' exp
 nnoremap <leader>g :execute '!python ~/scripts/python/open_web.py google.com' GetSelectedText()<CR>
 nnoremap <silent> <leader>z :sus<CR>
 nnoremap <silent> <leader><space> :noh<CR>
+nnoremap <leader>n :lnext<CR>
+nnoremap <leader>p :lprevious<CR>
 let g:ctrlp_map = '<leader>e'
+inoremap </ </<C-X><C-O>
+noremap <leader>i gg=G<C-O><C-O>
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 let g:UltiSnipsExpandTrigger="<c-e>"
-let g:UltiSnipsJumpForwardTrigger="<c-k>"
-let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 let g:UltiSnipsEditSplit="vertical"
 
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 " disable auto synctastic
 " let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:syntastic_aggregate_errors = 1
@@ -128,10 +132,10 @@ set foldlevel=1
 set cursorline
 
 " neocomplete setting
-" let g:neocomplete#enable_at_startup = 1
-" let g:neocomplete#enable_smart_case = 1
-" let g:neocomplete#sources#syntax#min_keyword_length = 3
-" let g:neocomplete#sources#tags#cache_limit_size = 500000
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#sources#tags#cache_limit_size = 500000
 
 " let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 " let g:ycm_key_list_select_completion=[]

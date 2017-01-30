@@ -5,3 +5,4 @@ shukiin.py
 *.pyc
 .netrwhist
 .jslintrc
+.idea/

@@ -36,4 +36,24 @@ sap.ui.define([
             }
         });
     });
-    endsnippet
+endsnippet
+
+snippet sapjsview
+sap.ui.jsview('${1:sap.ui.demo.wt.view.test}', {
+
+    /**
+    * Specifies the Controller belonging to this View.
+    * In the case that it is not implemented, or that "null" is returned, this View does not have a Controller.
+    * @memberOf $1 **/
+    getControllerName : function() {
+        return '${2:sap.ui.demo.wt.controller.test}';
+    },
+
+    /**
+    * Is initially called once after the Controller has been instantiated. It is the place where the UI is constructed.
+    * Since the Controller is given to this method, its event handlers can be attached right away.
+    * @memberOf $1 **/
+    createContent : function(oController) {
+    }
+});
+endsnippet
