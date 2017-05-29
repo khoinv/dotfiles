@@ -1,5 +1,5 @@
 [user]
-    email = nguyen-van-khoi@altplus.co.jp
+    email = khoinvbg@gmail.com
     name = Nguyen Van Khoi
 [push]
     default = current
@@ -14,7 +14,7 @@
     tree = log --oneline --decorate --all --graph
     merge-log = "!f() { git log --stat \"$1^..$1\"; }; f"
     dt = difftool
-    mt =mergetool
+    mt = mergetool
     d = diff
     c = commit
     ch = checkout
@@ -33,8 +33,13 @@
 [diff]
     tool = vimdiff
 [difftool]
-    prompt = false
+	prompt = false
 [url "git@bitbucket.org:"]
     insteadOf = https://bitbucket.org/
 ; [url "github.com"]
 ;     insteadOf = https://github.com
+[http]
+	sslVerify = false
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3

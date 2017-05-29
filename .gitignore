@@ -6,3 +6,4 @@ shukiin.py
 .netrwhist
 .jslintrc
 .idea/
+*.iml

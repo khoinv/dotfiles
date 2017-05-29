@@ -29,8 +29,9 @@ Plugin 'ervandew/supertab'
 Plugin 'soramugi/auto-ctags.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'tpope/vim-repeat'
-Plugin 'derekwyatt/vim-scala'
+" Plugin 'derekwyatt/vim-scala'
 " Plugin 'leafgarland/typescript-vim'
+" Plugin 'gre/play2vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -67,8 +68,8 @@ nnoremap <leader>l <C-W>l
 nnoremap <leader>v :vsplit<CR>
 nnoremap <leader>s :split<CR>
 nnoremap <leader>f :Rgrep<CR>
-nnoremap <leader>a <S-a>
-nnoremap <leader>; <S-a>;
+nnoremap <leader>a <S-a>;
+nnoremap <leader>; <S-a>;<ESC>:w<CR>
 nnoremap <space> za
 nnoremap ; :
 nnoremap <leader>nt :NeoCompleteToggle<CR>
@@ -80,7 +81,7 @@ nnoremap <C-b> :NERDTreeFind<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
-inoremap {<CR> {<CR>}<ESC><S-O>
+" inoremap {<CR> {<CR>}<ESC><S-O>
 " inoremap <expr> j pumvisible() ? "\<C-N>" : "j"
 " inoremap <expr> k pumvisible() ? "\<C-P>" : "k"
 
@@ -109,8 +110,7 @@ nnoremap <silent> <leader>z :sus<CR>
 nnoremap <silent> <leader><space> :noh<CR>
 nnoremap <leader>n :lnext<CR>
 nnoremap <leader>p :lprevious<CR>
-let g:ctrlp_map = '<leader>e'
-inoremap </ </<C-X><C-O>
+" inoremap </ </<C-X><C-O>
 noremap <leader>i gg=G<C-O><C-O>
 
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
@@ -119,11 +119,8 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 let g:UltiSnipsEditSplit="vertical"
 
-let g:syntastic_auto_loc_list = 0
-" disable auto synctastic
-" let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-let g:syntastic_aggregate_errors = 1
-
+let g:ctrlp_map = '<leader>e'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|target'
 
 set backspace=indent,eol,start
 set list listchars=tab:>-,trail:.,extends:>
@@ -150,12 +147,21 @@ let g:auto_ctags_tags_args = '--tag-relative --recurse --sort=yes'
 
 autocmd FileType python nnoremap <leader>r :execute '!clear;python' expand('%')<CR>
 autocmd FileType php nnoremap <c-f> :execute "vimgrep /function " . expand("<cword>") . "/j **/*.php" <Bar> cw<CR>
-autocmd FileType scala.html :UltiSnipsAddFiletypes scala
 autocmd BufRead,BufNewFile *.txt set filetype=sql
+autocmd BufRead,BufNewFile *.scss set tabstop=2
+autocmd BufRead,BufNewFile *.scss set softtabstop=2
+autocmd BufRead,BufNewFile *.scss set shiftwidth=2
+au BufRead,BufNewFile *.scss set filetype=scss
 
-" autocmd FileType javascript let g:syntastic_javascript_checkers = ['jshint', 'jslint']
-" autocmd FileType python let g:syntastic_python_checkers=['python', 'flake8']
-" autocmd FileType html let g:syntastic_html_checkers=['jshint', 'jslint']
+let g:syntastic_auto_loc_list = 0
+" disable auto synctastic
+" let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute " ,"trimming empty <", "unescaped &" , "lacks \"action", "is not recognized!", "discarding unexpected", "plain text isn't allowed in", "attribute with missing trailing quote mark"]
+let g:syntastic_typescript_checkers=['tslint']
+
+let Grep_Skip_Dirs = 'target .git .idea/'
 
 autocmd FileType html :UltiSnipsAddFiletypes javscript|:UltiSnipsAddFiletypes php|:UltiSnipsAddFiletypes python
 autocmd FileType javascript :UltiSnipsAddFiletypes html|:UltiSnipsAddFiletypes javascript
@@ -164,7 +170,5 @@ autocmd FileType php :UltiSnipsAddFiletypes html
 au BufRead,BufNewFile *.ts set filetype=typescript
 
 set clipboard=unnamed
-inoremap jj <ESC>
-inoremap jk <ESC>
 set exrc
 set secure
